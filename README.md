@@ -27,7 +27,7 @@ dependencies:
   acs_chat_flutter: ^0.0.1
 
 
-```markdown
+```
 ---
 
 ## 📸 Screenshots
