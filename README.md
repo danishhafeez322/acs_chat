@@ -1,6 +1,6 @@
 # acs_chat_flutter
 
-[![pub package](https://img.shields.io/pub/v/acs_chat_flutter.svg)](https://pub.dev/packages/acs_chat)
+[![pub package](https://img.shields.io/pub/v/acs_chat.svg)](https://pub.dev/packages/acs_chat)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-flutter-blue.svg)](https://flutter.dev)
 
