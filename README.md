@@ -25,7 +25,7 @@ A Flutter plugin to integrate Azure Communication Services (ACS) **Chat** featur
 
 ```yaml
 dependencies:
-  acs_chat: ^0.1.0
+  acs_chat: ^0.1.1
 ```
 ---
 ### 2. Prerequisites

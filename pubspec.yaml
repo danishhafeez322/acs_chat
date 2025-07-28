@@ -1,6 +1,6 @@
 name: acs_chat
 description: "A Flutter plugin for Azure Communication Services Chat"
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/danishhafeez322/acs_chat
 license: MIT
 
