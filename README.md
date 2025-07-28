@@ -45,7 +45,7 @@ To use this package, you need to have the following values from your Azure Commu
 After obtaining all required values, initialize the chat session:
 
 ```dart
-await AcsChatFlutter.initChat(
+await AcsChat.initChat(
   token: 'YOUR_ACCESS_TOKEN',
   userId: 'YOUR_USER_ID',
   threadId: 'YOUR_THREAD_ID',

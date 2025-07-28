@@ -25,8 +25,8 @@ class ChatController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    AcsChat.setOnMessageReceived(_handleNativeMessage);
     _joinChat();
+    AcsChat.setOnMessageReceived(_handleNativeMessage);
   }
 
   Future<void> _joinChat() async {
