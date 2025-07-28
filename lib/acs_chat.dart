@@ -5,6 +5,11 @@ import 'acs_chat_platform_interface.dart';
 class AcsChat {
   static const MethodChannel _channel = MethodChannel('acs_chat_flutter');
 
+  /// Initializes the chat with the provided parameters.
+  /// [token] - The ACS token for authentication.
+  /// [threadId] - The ID of the chat thread.
+  /// [userId] - The ID of the user.
+  /// [endpoint] - The ACS endpoint URL.
   static Future<void> initChat({
     required String token,
     required String threadId,

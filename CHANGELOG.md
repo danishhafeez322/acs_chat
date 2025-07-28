@@ -12,4 +12,5 @@
 
 * Add logs for initChat Method
 * Added sendMessage, receive messages listener
+* onSendMessageFailed Listener
 
