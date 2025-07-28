@@ -1,3 +1,8 @@
+## 0.1.1
+
+* bug fix
+* updated docs
+
 ## 0.1.0
 
 * iOS method channel fix
