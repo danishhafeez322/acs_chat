@@ -1,4 +1,3 @@
-# acs_chat_flutter
 
 [![pub package](https://img.shields.io/pub/v/acs_chat.svg)](https://pub.dev/packages/acs_chat)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -14,6 +13,7 @@ A Flutter plugin to integrate Azure Communication Services (ACS) **Chat** featur
 - ✅ Real-time chat using ACS
 - ✅ Send & receive messages
 - ✅ Listen for incoming messages
+- ✅ Listen for messages sent successfully
 - ✅ Native implementation using platform channels
 - 🔜 Coming soon: Calling support via ACS Calling SDK
 
