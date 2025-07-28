@@ -3,6 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-flutter-blue.svg)](https://flutter.dev)
 
+> **Need a Professional Flutter Developer? I'm [available](https://www.linkedin.com/in/danishhafeez/)!**
+
+[![Hire Me](https://img.shields.io/badge/Hire%20Me-LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/danishhafeez/)
 
 A Flutter plugin to integrate Azure Communication Services (ACS) **Chat** features using native Android/iOS SDKs.
 
@@ -15,7 +18,6 @@ A Flutter plugin to integrate Azure Communication Services (ACS) **Chat** featur
 - ✅ Listen for incoming messages
 - ✅ Listen for messages sent successfully
 - ✅ Native implementation using platform channels
-- 🔜 Coming soon: Calling support via ACS Calling SDK
 
 ---
 
@@ -58,3 +60,7 @@ await AcsChat.initChat(
 
 - [![LinkedIn](https://img.shields.io/badge/Danish-Hafeez-blue?logo=linkedin)](https://www.linkedin.com/in/danishhafeez)
 - [![LinkedIn](https://img.shields.io/badge/Muhammad-Ahmad-blue?logo=linkedin)](https://www.linkedin.com/in/muhammad-ahmad-821963133)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
