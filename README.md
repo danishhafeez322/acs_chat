@@ -34,4 +34,4 @@ dependencies:
 
 | Chat UI | Message Handling |
 |--------|------------------|
-| ![](images/real_device_ss.jpeg) | ![](images/emulator_chat_ss.jpeg) |
+| ![](images/real_device_ss.jpeg) | 
