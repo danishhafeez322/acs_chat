@@ -54,13 +54,7 @@ await AcsChatFlutter.initChat(
 ```
 ---
 
-## 📸 Screenshots
-
-| Chat UI | Message Handling |
-|--------|------------------|
-| ![](images/real_device_ss.jpeg) | 
-
 ## Maintainers
 
 - [![LinkedIn](https://img.shields.io/badge/Danish-Hafeez-blue?logo=linkedin)](https://www.linkedin.com/in/danishhafeez)
-- Muhammad Ahmad - [LinkedIn](https://www.linkedin.com/in/muhammad-ahmad-821963133)
+- [![LinkedIn](https://img.shields.io/badge/Muhammad-Ahmad-blue?logo=linkedin)](https://www.linkedin.com/in/muhammad-ahmad-821963133)
