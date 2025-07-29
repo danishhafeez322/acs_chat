@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'acs_chat_platform_interface.dart';
 
 class AcsChat {
-  static const MethodChannel _channel = MethodChannel('acs_chat_flutter');
+  static const MethodChannel _channel = MethodChannel('acs_chat');
 
   /// Initializes the chat with the provided parameters.
   /// [token] - The ACS token for authentication.

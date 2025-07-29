@@ -32,7 +32,7 @@ class AcsChatPlugin : FlutterPlugin, MethodCallHandler {
     private var acsEndpoint: String? = null
 
     override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
-        methodChannel = MethodChannel(binding.binaryMessenger, "acs_chat_flutter")
+        methodChannel = MethodChannel(binding.binaryMessenger, "acs_chat")
         methodChannel.setMethodCallHandler(this)
         context = binding.applicationContext
     }
@@ -60,6 +60,16 @@ class AcsChatPlugin : FlutterPlugin, MethodCallHandler {
                 val message = call.argument<String>("message")
                 sendChatMessage(message, result)
             }
+            "sendTypingIndicator" -> {
+                sendTypingIndicator(result)
+            }
+            "editMessage" -> {
+                val messageId = call.argument<String>("messageId")
+                val newContent = call.argument<String>("newContent")
+                editChatMessage(messageId, newContent, result)
+            }
+
+
             else -> result.notImplemented()
         }
     }
@@ -83,6 +93,13 @@ class AcsChatPlugin : FlutterPlugin, MethodCallHandler {
         }
         Log.d("ACSChat", "Started realtime notifications")
         registerMessageListener()
+        chatClient.addEventHandler(ChatEventType.TYPING_INDICATOR_RECEIVED) { payload ->
+            val event = payload as TypingIndicatorReceivedEvent
+            val sender = event.senderDisplayName ?: "Unknown"
+            Handler(Looper.getMainLooper()).post {
+                notifyFlutter("onTypingIndicatorReceived", mapOf("sender" to sender))
+            }
+        }
     }
 
 
@@ -140,6 +157,41 @@ class AcsChatPlugin : FlutterPlugin, MethodCallHandler {
     }.start()
 
     }
+    private fun sendTypingIndicator(result: MethodChannel.Result) {
+        Thread {
+            try {
+                chatThreadClient.sendTypingNotification()
+                Handler(Looper.getMainLooper()).post {
+                    result.success("typing_sent")
+                }
+            } catch (e: Exception) {
+                Handler(Looper.getMainLooper()).post {
+                    result.error("TYPING_FAILED", e.localizedMessage, null)
+                }
+            }
+        }.start()
+    }
+
+        private fun editChatMessage(messageId: String?, newContent: String?, result: MethodChannel.Result) {
+            if (messageId == null || newContent.isNullOrBlank()) {
+                result.error("INVALID_ARGUMENTS", "Message ID or content is invalid", null)
+                return
+            }
+
+            Thread {
+                try {
+                    val options = UpdateChatMessageOptions().setContent(newContent)
+                    chatThreadClient.updateMessage(messageId, options)
+                    Handler(Looper.getMainLooper()).post {
+                        result.success("message_updated")
+                    }
+                } catch (e: Exception) {
+                    Handler(Looper.getMainLooper()).post {
+                        result.error("UPDATE_FAILED", e.localizedMessage, null)
+                    }
+                }
+            }.start()
+        }
 
     private fun notifyFlutter(method: String, arguments: Any?) {
         methodChannel.invokeMethod(method, arguments)
